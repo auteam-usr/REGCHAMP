@@ -10,7 +10,7 @@ qm create 100 --name "ISP" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-
 qm importdisk 100 ISP-disk001.vmdk local-lvm --format qcow2 
 qm set 100 -ide0 local-lvm:vm-100-disk-0 --boot order=ide0
 cho "ISP is done!!!"
-wget "$(yadisk-direct https://disk.yandex.ru/d/RTO6rzQCgoi_2w)" -O RTR-HQ-disk001.vmdk
+curl $(yadisk-direct https://disk.yandex.ru/d/RTO6rzQCgoi_2w) -o RTR-HQ-disk001.vmdk
 qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --net0 virtio,bridge=vmbr1 --net1 virtio,bridge=vmbr3 
 qm importdisk 101 RTR-HQ-disk001.vmdk local-lvm --format qcow2 
 qm set 101 -ide0 local-lvm:vm-101-disk-0 --boot order=ide0
