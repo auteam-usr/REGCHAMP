@@ -1,0 +1,62 @@
+auto vmbr1
+iface vmbr1 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#ISP-HQ-R
+
+auto vmbr2
+iface vmbr2 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#ISP-BR-R
+
+auto vmbr3
+iface vmbr3 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#HQ-R-HQ-SW
+
+auto vmbr4
+iface vmbr4 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#BR-R-BR-SW
+
+auto vmbr5
+iface vmbr5 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#HQ-SW-HQ-CLI
+
+auto vmbr6
+iface vmbr6 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#HQ-SW-HQ-CICD
+
+auto vmbr7
+iface vmbr7 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#HQ-SW-HQ-SRV
+
+auto vmbr8
+iface vmbr8 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#BR-SW-BR-SRV
+
+auto vmbr9
+iface vmbr9 inet manual
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+#BR-SW-BR-CLI
