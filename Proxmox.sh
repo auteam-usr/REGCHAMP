@@ -46,7 +46,7 @@ qm importdisk 106 1gb.raw local-lvm --format qcow2
 qm set 106 -ide0 local-lvm:vm-106-disk-0 -ide1 local-lvm:vm-106-disk-1 -ide2 local-lvm:vm-106-disk-2 --boot order=ide0
 echo "SRV-BR is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/Vf9gwcrzDPE1FQ) -o CLI-HQ-disk001.vmdk
-qm create 107 --name "CLI-HQ" --cores 2 --memory 2048 --ostype l26 --scsihw virtio-scsi-single 0 --net0 virtio,bridge=vmbr5 
+qm create 107 --name "CLI-HQ" --cores 2 --memory 2048 --ostype l26 --scsihw virtio-scsi-single --net0 virtio,bridge=vmbr5 
 qm importdisk 107 CLI-HQ-disk001.vmdk local-lvm --format qcow2 
 qm set 107 -ide0 local-lvm:vm-107-disk-0 --boot order=ide0
 echo "CLI-HQ is done!!!"
