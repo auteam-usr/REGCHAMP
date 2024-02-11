@@ -10,7 +10,7 @@ qm create 100 --name "ISP" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-
 qm importdisk 100 ISP-disk001.vmdk local-lvm --format qcow2 
 qm set 100 -ide0 local-lvm:vm-100-disk-0 --boot order=ide0
 cho "ISP is done!!!"
-curl $(yadisk-direct https://disk.yandex.ru/d/RTO6rzQCgoi_2w) -o RTR-HQ-disk001.vmdk
+curl -L $(yadisk-direct https://disk.yandex.ru/d/RTO6rzQCgoi_2w) -o RTR-HQ-disk001.vmdk
 qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --net0 virtio,bridge=vmbr1 --net1 virtio,bridge=vmbr3 
 qm importdisk 101 RTR-HQ-disk001.vmdk local-lvm --format qcow2 
 qm set 101 -ide0 local-lvm:vm-101-disk-0 --boot order=ide0
@@ -57,7 +57,7 @@ qm set 108 -ide0 local-lvm:vm-108-disk-0 --boot order=ide0
 echo "CLI-BR is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/db0TxXSedEzJDw) -o CICD-HQ-disk001.vmdk
 qm create 109 --name "CICD-HQ" --cores 2 --memory 2048 --ostype l26 --scsihw virtio-scsi-single --net0 virtio,bridge=vmbr6 
-qm importdisk 109 --name CICD-HQ-disk001.vmdk local-lvm --format qcow2 
+qm importdisk 109 CICD-HQ-disk001.vmdk local-lvm --format qcow2 
 qm set 109 -ide0 local-lvm:vm-109-disk-0 --boot order=ide0
 echo "CICD-HQ is done!!!"
 echo "ALL DONE!!!"
