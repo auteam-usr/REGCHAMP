@@ -11,12 +11,12 @@ qm importdisk 100 ISP-disk001.vmdk local-lvm --format qcow2
 qm set 100 -ide0 local-lvm:vm-100-disk-0 --boot order=ide0
 cho "ISP is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/RTO6rzQCgoi_2w) -o RTR-HQ-disk001.vmdk
-qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --net0 virtio,bridge=vmbr1 --net1 virtio,bridge=vmbr3 
+qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --net0 e1000,bridge=vmbr1 --net1 e1000,bridge=vmbr3 
 qm importdisk 101 RTR-HQ-disk001.vmdk local-lvm --format qcow2 
 qm set 101 -ide0 local-lvm:vm-101-disk-0 --boot order=ide0
 echo "RTR-HQ is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/arhOlptNl4fIQg) -o RTR-BR-disk001.vmdk
-qm create 102 --name "RTR-BR" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr2 --net1 virtio,bridge=vmbr4
+qm create 102 --name "RTR-BR" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single  --net0 e1000,bridge=vmbr2 --net1 e1000,bridge=vmbr4
 qm importdisk 102 RTR-BR-disk001.vmdk local-lvm --format qcow2 
 qm set 102 -ide0 local-lvm:vm-102-disk-0 --boot order=ide0
 echo "RTR-BR is done!!!"
