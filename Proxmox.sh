@@ -12,7 +12,7 @@ Networking=(
 )
 
 pveum role add Competitor -privs "VM.Monitor VM.Console VM.PowerMgmt VM.Snapshot.Rollback VM.Config.Network"
-pvesh create access/users --userid $comp_name@pve --password $comp_passwd --comment "Competition1 account"
+pvesh create access/users --userid $comp_name@pve --password $comp_passwd --comment "Competition account"
 pveum pool add RC39_2024_stand_1
 pveum acl modify /pool/RC2024_stand_1 -user $comp_name -role PVEAuditor
 
