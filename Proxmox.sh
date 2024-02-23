@@ -1,5 +1,6 @@
 #!/bin/bash
 
+declare -A Networking
 Networking=(
 	['vmbr1']='RTR-HQ<=>ISP' ['vmbr3']='RTR-HQ<=>SW-HQ' ['vmbr5']='SW-HQ<=>CLI-HQ' ['vmbr6']='SW-HQ<=>CICD-HQ' ['vmbr7']='SW-HQ<=>SRV-HQ'
 	['vmbr2']='ISP<=>RTR-BR' ['vmbr4']='RTR-BR<=>SW-BR' ['vmbr8']='SW-BR<=>SRV-BR' ['vmbr9']='SW-BR<=>CLI-BR'
