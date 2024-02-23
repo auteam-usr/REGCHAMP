@@ -2,7 +2,7 @@
 
 comp_name='Competitor1'
 comp_passwd='Competitor1'
-stand_name='RC2024_stand_1'
+stand_name='RC39_2024_stand_1'
 
 Networking=(
 	['vmbr1']='ISP<=>RTR-HQ'	['vmbr11']='ISP<=>RTR-BR'
@@ -15,7 +15,7 @@ Networking=(
 pveum role add Competitor -privs "VM.Monitor VM.Console VM.PowerMgmt VM.Snapshot.Rollback VM.Config.Network"
 pveum role add ISP-priv -privs "VM.Monitor VM.Console VM.PowerMgmt VM.Snapshot.Rollback VM.Config.Network"
 pvesh create access/users --userid $comp_name@pve --password $comp_passwd --comment "Competition account"
-pveum pool add RC39_2024_stand_1
+pveum pool add $stand_name
 pveum acl modify /pool/$stand_name -user $comp_name -role Competitor
 
 for i in "${!Networking[@]}"
