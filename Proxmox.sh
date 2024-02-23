@@ -32,12 +32,12 @@ qm importdisk 100 ISP.vmdk local-lvm --format qcow2
 qm set 100 -scsi0 local-lvm:vm-100-disk-0 --boot order=scsi0
 echo "ISP is done!!!"
 
-qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --serial0 socket --net0 e1000,bridge=vmbr1 --net1 e1000,bridge=vmbr3 
+qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --acpi 0 --scsihw virtio-scsi-single --serial0 socket --net0 e1000,bridge=vmbr1 --net1 e1000,bridge=vmbr3 
 qm importdisk 101 vESR.vmdk local-lvm --format qcow2 
 qm set 101 -scsi0 local-lvm:vm-101-disk-0 --boot order=scsi0
 echo "RTR-HQ is done!!!"
 
-qm create 102 --name "RTR-BR" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --serial0 socket  --net0 e1000,bridge=vmbr2 --net1 e1000,bridge=vmbr4
+qm create 102 --name "RTR-BR" --cores 4 --memory 4096 --ostype l26 --acpi 0 --scsihw virtio-scsi-single --serial0 socket  --net0 e1000,bridge=vmbr2 --net1 e1000,bridge=vmbr4
 qm importdisk 102 vESR.vmdk local-lvm --format qcow2 
 qm set 102 -scsi0 local-lvm:vm-102-disk-0 --boot order=scsi0
 echo "RTR-BR is done!!!"
