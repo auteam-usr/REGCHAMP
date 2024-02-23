@@ -30,7 +30,7 @@ iface ${iface} inet manual
 #${desc}
 IFACE
   ifup $i
-  pveum acl modify /sdn/zones/localnetwork/$1 -user $comp_name -role PVEAuditor
+  pveum acl modify /sdn/zones/localnetwork/$i -user $comp_name -role PVEAuditor
 done
 
 ya_url() { echo $(curl --silent -G --data-urlencode "public_key=$1" 'https://cloud-api.yandex.net/v1/disk/public/resources/download' | grep -Po '"href":"\K[^"]+'); }
