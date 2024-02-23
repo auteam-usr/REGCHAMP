@@ -13,7 +13,6 @@ Networking=(
 )
 
 pveum role add Competitor -privs "VM.Monitor VM.Console VM.PowerMgmt VM.Snapshot.Rollback VM.Config.Network"
-pveum role add ISP-priv -privs "VM.Monitor VM.Console VM.PowerMgmt VM.Snapshot.Rollback VM.Config.Network"
 pvesh create access/users --userid $comp_name@pve --password $comp_passwd --comment "Competition account"
 pveum pool add $stand_name
 pveum acl modify /pool/$stand_name -user $comp_name -role Competitor
