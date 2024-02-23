@@ -90,7 +90,7 @@ qm importdisk 109 ALT_Workstation.vmdk local-lvm --format qcow2
 qm set 109 -scsi0 local-lvm:vm-109-disk-0 --boot order=scsi0
 echo "CLI-BR is done!!!"
 
-pvesh set /pool/$stand_name -vms "101,102,103,104,105,106,107,108,109"
+pvesh set /pool/$stand_name -vms "100,101,102,103,104,105,106,107,108,109"
 
 rm -f ISP.vmdk vESR.vmdk ALT_Server.vmdk ALT_Workstation.vmdk
 
