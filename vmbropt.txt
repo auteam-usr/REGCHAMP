@@ -1,0 +1,5 @@
+BOOTPROTO=static
+CONFIG_IPV4=yes
+HOST=
+ONBOOT=yes
+TYPE=bri
