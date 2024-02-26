@@ -1,7 +1,7 @@
 #!/bin/bash
 cat ./ProxmoxInterfaces.txt >> /etc/network/interfaces;
 for i in $(seq 1 9); do
-mkdir /etc/net/ifaces/vmbr$i ; cp ./vmbropt /etc/net/ifaces/vmbr$i/options
+mkdir /etc/net/ifaces/vmbr$i ; cp ./vmbropt.txt /etc/net/ifaces/vmbr$i/options
 done
 systemctl restart network;
 apt-get install python3-pip python3-venv -y;
