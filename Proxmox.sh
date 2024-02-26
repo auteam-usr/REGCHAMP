@@ -31,7 +31,7 @@ qm create 104 --name "SW-BR" --cores 1 --memory 1024 --ostype l26 --scsihw virti
 qm importdisk 104 SW-BR-disk001.vmdk $STORAGE --format qcow2 
 qm set 104 -ide0 $STORAGE:vm-104-disk-0 --boot order=ide0
 echo "SW-BR is done!!!"
-curl -L $(yadisk-direct https://disk.yandex.ru/d/-bAot7cd99TMvA) -o SRV-HQ-disk001.vmdk
+curl -L $(yadisk-direct https://disk.yandex.ru/d/eeydoZIZbWG9Iw) -o SRV-HQ-disk001.vmdk
 curl -L $(yadisk-direct https://disk.yandex.ru/d/--CnGh-_AI5YqQ) -o 1gb.raw
 qm create 105 --name "SRV-HQ" --cores 2 --memory 4096 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr7
 qm importdisk 105 SRV-HQ-disk001.vmdk $STORAGE --format qcow2
@@ -39,7 +39,7 @@ qm importdisk 105 1gb.raw $STORAGE --format qcow2
 qm importdisk 105 1gb.raw $STORAGE --format qcow2
 qm set 105 -ide0 $STORAGE:vm-105-disk-0 -ide1 $STORAGE:vm-105-disk-1 -ide2 $STORAGE:vm-105-disk-2 --boot order=ide0
 echo "SRV-HQ is done!!!"
-curl -L $(yadisk-direct https://disk.yandex.ru/d/uqcD6Ju1egTVhQ) -o SRV-BR-disk001.vmdk
+curl -L $(yadisk-direct https://disk.yandex.ru/d/TOg9N-oZVjXfdw) -o SRV-BR-disk001.vmdk
 qm create 106 --name "SRV-BR" --cores 2 --memory 2048 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr8 
 qm importdisk 106 SRV-BR-disk001.vmdk $STORAGE --format qcow2 
 qm importdisk 106 1gb.raw $STORAGE --format qcow2
