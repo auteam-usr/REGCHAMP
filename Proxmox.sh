@@ -10,7 +10,7 @@ curl -L $(yadisk-direct https://disk.yandex.ru/d/lyptnAHegU3ehA) -o ISP-disk001.
 qm create 100 --name "ISP" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr0 --net1 virtio,bridge=vmbr1 --net2 virtio,bridge=vmbr2
 qm importdisk 100 ISP-disk001.vmdk $STORAGE --format qcow2 
 qm set 100 -ide0 $STORAGE:vm-100-disk-0 --boot order=ide0
-cho "ISP is done!!!"
+echo "ISP is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/RTO6rzQCgoi_2w) -o RTR-HQ-disk001.vmdk
 qm create 101 --name "RTR-HQ" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single --net0 e1000,bridge=vmbr1 --net1 e1000,bridge=vmbr3 
 qm importdisk 101 RTR-HQ-disk001.vmdk $STORAGE --format qcow2 
