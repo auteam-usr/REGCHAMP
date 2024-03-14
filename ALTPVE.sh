@@ -25,12 +25,12 @@ qm importdisk 102 RTR-BR-disk001.vmdk $STORAGE --format qcow2
 qm set 102 -ide0 $STORAGE:102/:vm-102-disk-0.qcow2 --boot order=ide0
 echo "RTR-BR is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/D7U1KJVEOIoibQ) -o SW-HQ-disk001.vmdk
-qm create 103 --name "SW-HQ" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr3 --net1 virtio,bridge=vmbr5 --net2 virtio,bridg>
+qm create 103 --name "SW-HQ" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr3 --net1 virtio,bridge=vmbr5 --net2 virtio,bridge=vmbr6 --net3 virtio,bridge=vmbr7
 qm importdisk 103 SW-HQ-disk001.vmdk $STORAGE --format qcow2 
 qm set 103 -ide0 $STORAGE:103/vm-103-disk-0.qcow2 --boot order=ide0
 echo "SW-HQ is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/looDS7d-rTbfcA) -o SW-BR-disk001.vmdk
-qm create 104 --name "SW-BR" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr4 --net1 virtio,bridge=vmbr8 --net2 virtio,bridg>
+qm create 104 --name "SW-BR" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr4 --net1 virtio,bridge=vmbr8 --net2 virtio,bridge=vmbr9
 qm importdisk 104 SW-BR-disk001.vmdk $STORAGE --format qcow2 
 qm set 104 -ide0 $STORAGE:104/vm-104-disk-0.qcow2 --boot order=ide0
 echo "SW-BR is done!!!"
