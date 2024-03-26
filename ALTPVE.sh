@@ -22,7 +22,7 @@ echo "RTR-HQ is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/arhOlptNl4fIQg) -o RTR-BR-disk001.vmdk
 qm create 102 --name "RTR-BR" --cores 4 --memory 4096 --ostype l26 --scsihw virtio-scsi-single  --net0 e1000,bridge=vmbr2 --net1 e1000,bridge=vmbr4
 qm importdisk 102 RTR-BR-disk001.vmdk $STORAGE --format qcow2 
-qm set 102 -ide0 $STORAGE:102/:vm-102-disk-0.qcow2 --boot order=ide0
+qm set 102 -ide0 $STORAGE:102/vm-102-disk-0.qcow2 --boot order=ide0
 echo "RTR-BR is done!!!"
 curl -L $(yadisk-direct https://disk.yandex.ru/d/D7U1KJVEOIoibQ) -o SW-HQ-disk001.vmdk
 qm create 103 --name "SW-HQ" --cores 1 --memory 1024 --ostype l26 --scsihw virtio-scsi-single  --net0 virtio,bridge=vmbr3 --net1 virtio,bridge=vmbr5 --net2 virtio,bridge=vmbr6 --net3 virtio,bridge=vmbr7
